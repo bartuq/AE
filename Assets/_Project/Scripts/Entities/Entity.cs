@@ -5,7 +5,7 @@ namespace AE
     [RequireComponent(typeof(CharacterController))]
     public abstract class Entity<T> : MonoBehaviour where T : StateMachine
     {
-        [field: SerializeField] public float Speed { get; private set; } = 4;
+        [field: SerializeField] public float Speed { get; private set; } = 5;
 
         protected CharacterController _controller;
         protected T StateMachine { get; private set; }
@@ -30,9 +30,14 @@ namespace AE
 
         protected abstract T CreateStateMachine();
 
-        public void Move(Vector3 motion)
+        public virtual void Move(Vector3 motion)
         {
             _controller.Move(motion);
+        }
+
+        public void Rotate(Vector3 target)
+        {
+            transform.LookAt(transform.position + target);
         }
 
         public void ApplyGravity()

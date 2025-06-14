@@ -40,7 +40,10 @@ namespace AE
                 return;
             }
 
-            Vector3 move = _stateMachine.Player.Speed * Time.deltaTime * new Vector3(input.x, 0, input.y).normalized;
+            Vector3 direction = _stateMachine.Player.GetMovementDirection(input);
+            Vector3 move = _stateMachine.Player.Speed * Time.deltaTime * direction;
+
+            //Vector3 move = _stateMachine.Player.Speed * Time.deltaTime * new Vector3(input.x, 0, input.y).normalized;
             _stateMachine.Player.Move(move);
         }
     }
