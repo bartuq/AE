@@ -25,6 +25,15 @@ namespace AE
         {
             base.Update();
             //Debug.Log($"[{_stateMachine.Player.name}] Idle");
+
+            _stateMachine.Player.ApplyGravity();
+
+            Vector2 input = _stateMachine.Player.MoveInput;
+            if (input != Vector2.zero)
+            {
+                _stateMachine.SetMoveState();
+                return;
+            }
         }
         #endregion
     }

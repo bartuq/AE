@@ -25,7 +25,23 @@ namespace AE
         {
             base.Update();
             //Debug.Log($"[{_stateMachine.Player.name}] Move");
+
+            _stateMachine.Player.ApplyGravity();
+            Move();
         }
         #endregion
+
+        public void Move()
+        {
+            Vector2 input = _stateMachine.Player.MoveInput;
+            if (input == Vector2.zero)
+            {
+                _stateMachine.SetIdleState();
+                return;
+            }
+
+            Vector3 move = _stateMachine.Player.Speed * Time.deltaTime * new Vector3(input.x, 0, input.y).normalized;
+            _stateMachine.Player.Move(move);
+        }
     }
 }

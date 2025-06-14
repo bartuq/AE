@@ -2,15 +2,21 @@ using UnityEngine;
 
 namespace AE
 {
+    [RequireComponent(typeof(CharacterController))]
     public abstract class Entity<T> : MonoBehaviour where T : StateMachine
     {
+        [field: SerializeField] public float Speed { get; private set; } = 4;
+
+        protected CharacterController _controller;
         protected T StateMachine { get; private set; }
 
-        protected abstract T CreateStateMachine();
+        private Vector3 _velocity;
+        private readonly float _gravity = -9.81f;
 
         protected virtual void Awake()
         {
             StateMachine = CreateStateMachine();
+            _controller = GetComponent<CharacterController>();
         }
 
         protected virtual void Start()
@@ -20,6 +26,27 @@ namespace AE
         protected virtual void Update()
         {
             StateMachine?.Update();
+        }
+
+        protected abstract T CreateStateMachine();
+
+        public void Move(Vector3 motion)
+        {
+            _controller.Move(motion);
+        }
+
+        public void ApplyGravity()
+        {
+            bool isGrounded = _controller.isGrounded;
+
+            if (isGrounded && (_velocity.y < 0))
+            {
+                _velocity.y = 0f;
+            }
+
+            _velocity.y += _gravity * Time.deltaTime;
+
+            _controller.Move(_velocity * Time.deltaTime);
         }
     }
 }
