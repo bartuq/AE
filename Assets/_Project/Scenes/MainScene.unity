@@ -14216,6 +14216,7 @@ GameObject:
   - component: {fileID: 1789674218}
   - component: {fileID: 1789674217}
   - component: {fileID: 1789674219}
+  - component: {fileID: 1789674220}
   m_Layer: 5
   m_Name: UIInteraction
   m_TagString: Untagged
@@ -14269,6 +14270,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 148e2c1315d5f0d47a50266e24fa6fe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1789674220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789674216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1a473ed10f5db641a3dc752701152fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
+  response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1789674219}
+        m_TargetAssemblyTypeName: AE.UIInteraction, AE
+        m_MethodName: ShowInteraction
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &1793053359
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -72,9 +72,13 @@ namespace AE
                     if (_currentInteractable == interactable) return;
                     Debug.Log("Interaction");
                     _currentInteractable = interactable;
+                    _currentInteractable.Show();
                     return;
                 }
             }
+
+            if (_currentInteractable == null) return;
+            _currentInteractable.Hide();
             _currentInteractable = null;
         }
 

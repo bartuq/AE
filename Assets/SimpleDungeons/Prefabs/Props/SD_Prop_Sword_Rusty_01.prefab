@@ -122,3 +122,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stringEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
+  _text: Miecz

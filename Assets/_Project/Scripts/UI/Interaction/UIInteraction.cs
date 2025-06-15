@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -17,10 +18,19 @@ namespace AE
             HideInteraction();
         }
 
-        public void ShowInteraction(string text)
+        public void ShowInteraction(string text, Action callback = null)
         {
+            if (string.IsNullOrEmpty(text))
+            {
+                HideInteraction();
+                callback?.Invoke();
+                return;
+            }
+
             _label.text = text;
             _container.style.display = DisplayStyle.Flex;
+
+            callback?.Invoke();
         }
 
         public void HideInteraction()
