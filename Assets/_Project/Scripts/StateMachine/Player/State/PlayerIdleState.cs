@@ -26,6 +26,7 @@ namespace AE
             base.Update();
             //Debug.Log($"[{_stateMachine.Player.name}] Idle");
 
+            _stateMachine.Player.DetectInteractable();
             _stateMachine.Player.ApplyGravity();
 
             Vector2 input = _stateMachine.Player.MoveInput;

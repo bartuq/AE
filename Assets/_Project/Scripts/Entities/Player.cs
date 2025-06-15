@@ -5,11 +5,40 @@ namespace AE
 {
     public class Player : Entity<PlayerStateMachine>
     {
+        [SerializeField] private float _interactDistance = 3;
+        [SerializeField] private LayerMask _interactLayerMask;
+
         public Vector2 MoveInput { get; private set; }
 
+        private PlayerControls _inputActions;
         private Transform _cameraTransform;
+        private IInteractable _currentInteractable;
 
         protected override PlayerStateMachine CreateStateMachine() => new(this);
+
+        #region InputActions
+        private void OnEnable()
+        {
+            _inputActions.Enable();
+            _inputActions.Gameplay.Move.performed += OnMove;
+            _inputActions.Gameplay.Move.canceled += OnMove;
+            _inputActions.Gameplay.Interact.performed += OnInteract;
+        }
+
+        private void OnDisable()
+        {
+            _inputActions.Gameplay.Move.performed -= OnMove;
+            _inputActions.Gameplay.Move.canceled -= OnMove;
+            _inputActions.Gameplay.Interact.performed -= OnInteract;
+            _inputActions.Disable();
+        }
+        #endregion
+
+        protected override void Awake()
+        {
+            base.Awake();
+            _inputActions = new PlayerControls();
+        }
 
         protected override void Start()
         {
@@ -34,9 +63,30 @@ namespace AE
             return (forward * input.y + right * input.x).normalized;
         }
 
+        public void DetectInteractable()
+        {
+            if (Physics.Raycast(_cameraTransform.position, _cameraTransform.forward, out RaycastHit hit, _interactDistance, _interactLayerMask))
+            {
+                if (hit.collider.TryGetComponent(out IInteractable interactable))
+                {
+                    if (_currentInteractable == interactable) return;
+                    Debug.Log("Interaction");
+                    _currentInteractable = interactable;
+                    return;
+                }
+            }
+            _currentInteractable = null;
+        }
+
         public void OnMove(InputAction.CallbackContext ctx)
         {
             MoveInput = ctx.ReadValue<Vector2>();
+        }
+
+        public void OnInteract(InputAction.CallbackContext ctx)
+        {
+            if (_currentInteractable == null) return;
+            _currentInteractable.Interact();
         }
     }
 }

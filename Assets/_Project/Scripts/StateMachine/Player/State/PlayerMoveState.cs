@@ -26,6 +26,7 @@ namespace AE
             base.Update();
             //Debug.Log($"[{_stateMachine.Player.name}] Move");
 
+            _stateMachine.Player.DetectInteractable();
             _stateMachine.Player.ApplyGravity();
             Move();
         }
