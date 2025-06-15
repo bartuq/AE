@@ -2,8 +2,9 @@ namespace AE
 {
     public interface IInteractable
     {
+        string Label { get; }
         void Interact();
-        void Show();
-        void Hide();
+        void ShowLabel();
+        void HideLabel();
     }
 }

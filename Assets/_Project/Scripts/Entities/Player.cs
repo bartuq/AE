@@ -5,6 +5,9 @@ namespace AE
 {
     public class Player : Entity<PlayerStateMachine>
     {
+        //[SerializeField] private StringGameEvent _labelEvent;
+        //[SerializeField] private StringGameEvent _messageEvent;
+        [Header("Interaction")]
         [SerializeField] private float _interactDistance = 3;
         [SerializeField] private LayerMask _interactLayerMask;
 
@@ -72,13 +75,13 @@ namespace AE
                     if (_currentInteractable == interactable) return;
                     Debug.Log("Interaction");
                     _currentInteractable = interactable;
-                    _currentInteractable.Show();
+                    _currentInteractable.ShowLabel();
                     return;
                 }
             }
 
             if (_currentInteractable == null) return;
-            _currentInteractable.Hide();
+            _currentInteractable.HideLabel();
             _currentInteractable = null;
         }
 
@@ -92,5 +95,25 @@ namespace AE
             if (_currentInteractable == null) return;
             _currentInteractable.Interact();
         }
+
+        /*
+        public void ShowLabelEvent(string text, string message)
+        {
+            if (!_labelEvent || string.IsNullOrEmpty(text)) return;
+            _labelEvent.TriggerEvent(text, () => MessageEvent(message));
+        }
+
+        public void HideLabelEvent(string message)
+        {
+            if (!_labelEvent) return;
+            _labelEvent.TriggerEvent("", () => MessageEvent(message));
+        }
+
+        public void MessageEvent(string message)
+        {
+            if (!_messageEvent || string.IsNullOrEmpty(message)) return;
+            _messageEvent.TriggerEvent(message);
+        }
+        */
     }
 }
