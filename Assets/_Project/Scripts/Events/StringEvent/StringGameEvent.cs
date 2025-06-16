@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace AE
 {
-    [CreateAssetMenu(fileName = "Event", menuName = "AE/Events/String Event")]
+    [CreateAssetMenu(fileName = "Event", menuName = "AE/Events/StringEvent")]
     public class StringGameEvent : ScriptableObject
     {
         private readonly List<StringGameEventListener> listeners = new();
@@ -19,18 +19,14 @@ namespace AE
 
         public void AddListener(StringGameEventListener listener)
         {
-            if (!listeners.Contains(listener))
-            {
-                listeners.Add(listener);
-            }
+            if (listeners.Contains(listener)) return;
+            listeners.Add(listener);
         }
 
         public void RemoveListener(StringGameEventListener listener)
         {
-            if (listeners.Contains(listener))
-            {
-                listeners.Remove(listener);
-            }
+            if (!listeners.Contains(listener)) return;
+            listeners.Remove(listener);
         }
     }
 }

@@ -8,6 +8,7 @@ namespace AE
         //[SerializeField] private StringGameEvent _labelEvent;
         //[SerializeField] private StringGameEvent _messageEvent;
         [Header("Interaction")]
+        [field: SerializeField] public UsableItem Inventory { get; private set; }
         [SerializeField] private float _interactDistance = 3;
         [SerializeField] private LayerMask _interactLayerMask;
 
@@ -93,8 +94,16 @@ namespace AE
         public void OnInteract(InputAction.CallbackContext ctx)
         {
             if (_currentInteractable == null) return;
-            _currentInteractable.Interact();
+            _currentInteractable.Interact(this);
         }
+
+        #region Inventory
+        public bool HasRequiredItem(UsableItem item) => (Inventory & item) == item;
+
+        public void AddItem(UsableItem item) => Inventory |= item;
+
+        public void RemoveItem(UsableItem item) => Inventory &= ~item;
+        #endregion
 
         /*
         public void ShowLabelEvent(string text, string message)

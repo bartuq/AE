@@ -5,6 +5,10 @@ namespace AE
 {
     public class Item : MonoBehaviour, IInteractable
     {
+        [SerializeField, Min(-1)] private int _Id = -1;
+        [SerializeField] private PuzzleGameEvent _puzzleEvent;
+
+        [SerializeField] private UsableItem _requiredItem;
         [SerializeField] private StringGameEvent _labelEvent;
         [SerializeField] private StringGameEvent _messageEvent;
         [SerializeField] private string _text;
@@ -16,9 +20,17 @@ namespace AE
 
         public string Label => _text;
 
-        public void Interact()
+        /*
+        private void Start()
         {
-            Debug.Log("Item");
+            // test
+            transform.DOLocalRotate(new Vector3(0, 0, 360), 1f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart);
+        }
+        */
+
+        public void Interact(Player player)
+        {
+            if (IsPuzzle(player)) return;
             _onInteract?.Invoke();
         }
 
@@ -40,6 +52,15 @@ namespace AE
             _messageEvent.TriggerEvent(message);
         }
 
+        public bool IsPuzzle(Player player)
+        {
+            if (!_puzzleEvent) return false;
+            _puzzleEvent.TriggerEvent(_Id, player, _onInteract.Invoke);
+            return true;
+        }
+
         public void DestroyItem() => Destroy(gameObject);
+
+        public void MoveVertical(int value) => transform.position += Vector3.up * value;
     }
 }
