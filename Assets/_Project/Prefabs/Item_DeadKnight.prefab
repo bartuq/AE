@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &113766
+--- !u!1 &3278901798946140708
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 485710}
-  - component: {fileID: 3348810}
-  - component: {fileID: 2313322}
-  - component: {fileID: 64646662214266494}
-  m_Layer: 0
-  m_Name: SD_Prop_Corpse_03
+  - component: {fileID: 9022321201670961519}
+  - component: {fileID: 668411407796104316}
+  - component: {fileID: 2102762666836727946}
+  - component: {fileID: 1683786526841536247}
+  - component: {fileID: 4080786565343938452}
+  - component: {fileID: 8695676733982174158}
+  m_Layer: 6
+  m_Name: Item_DeadKnight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &485710
+  m_IsActive: 1
+--- !u!4 &9022321201670961519
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113766}
+  m_GameObject: {fileID: 3278901798946140708}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -34,21 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3348810
+--- !u!33 &668411407796104316
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113766}
+  m_GameObject: {fileID: 3278901798946140708}
   m_Mesh: {fileID: 4300000, guid: 5536cd1ddb1bafc499487ed3930611f9, type: 3}
---- !u!23 &2313322
+--- !u!23 &2102762666836727946
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113766}
+  m_GameObject: {fileID: 3278901798946140708}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -87,13 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64646662214266494
+--- !u!64 &1683786526841536247
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 113766}
+  m_GameObject: {fileID: 3278901798946140708}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -109,3 +111,59 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43369072155268444, guid: 28cc8c09b1f42c84297b12139fbdfbda, type: 2}
+--- !u!114 &4080786565343938452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278901798946140708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
+  _label: "Przygl\u0105dnij si\u0119"
+  _onInteract:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8695676733982174158}
+        m_TargetAssemblyTypeName: AE.Message, AE
+        m_MethodName: ShowDefaultMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: "Spod he\u0142mu s\u0142ycha\u0107 szept: - Sp\xF3jrz
+            oczami umrzyka..."
+          m_BoolArgument: 0
+        m_CallState: 2
+  _onShowLabel:
+    m_PersistentCalls:
+      m_Calls: []
+  _onHideLabel:
+    m_PersistentCalls:
+      m_Calls: []
+  _onFailedInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  _requiredItem: 0
+  _addItem: 0
+--- !u!114 &8695676733982174158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278901798946140708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a445aca0065495e44b43cc1c8ea42510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
+  _defaultMessage: "Spod he\u0142mu s\u0142ycha\u0107 szept: - Sp\xF3jrz oczami umrzyka..."
+  _alternateMessage: 

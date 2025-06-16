@@ -34,6 +34,6 @@ namespace AE
 
         public void DestroyItem() => Destroy(gameObject);
 
-        public void MoveVertical(int value) => transform.position += Vector3.up * value;
+        public void MoveVertical(float value) => transform.position += Vector3.up * value;
     }
 }

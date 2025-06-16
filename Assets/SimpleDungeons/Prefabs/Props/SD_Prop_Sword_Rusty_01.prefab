@@ -12,15 +12,13 @@ GameObject:
   - component: {fileID: 3313230}
   - component: {fileID: 2321716}
   - component: {fileID: 64081055339493018}
-  - component: {fileID: 685263427872520608}
-  - component: {fileID: 2025525695878834250}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SD_Prop_Sword_Rusty_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &441350
 Transform:
   m_ObjectHideFlags: 0
@@ -111,71 +109,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43591370481900230, guid: a685ca8eaa2765d418be640300e96b8c, type: 2}
---- !u!114 &685263427872520608
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _label: Miecz
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2025525695878834250}
-        m_TargetAssemblyTypeName: AE.Message, AE
-        m_MethodName: ShowDefaultMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: "Ostrze miecza zdaje si\u0119 by\u0107 wci\u0105\u017C
-            ostre."
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 685263427872520608}
-        m_TargetAssemblyTypeName: AE.Item, AE
-        m_MethodName: DestroyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onShowLabel:
-    m_PersistentCalls:
-      m_Calls: []
-  _onHideLabel:
-    m_PersistentCalls:
-      m_Calls: []
-  _onFailedInteract:
-    m_PersistentCalls:
-      m_Calls: []
-  _requiredItem: 0
-  _addItem: 1
---- !u!114 &2025525695878834250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 101020}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a445aca0065495e44b43cc1c8ea42510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
-  _defaultMessage: "Ostrze miecza zdaje si\u0119 by\u0107 wci\u0105\u017C ostre."
-  _alternateMessage: 

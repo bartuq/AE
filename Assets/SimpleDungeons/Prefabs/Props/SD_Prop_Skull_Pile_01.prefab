@@ -12,15 +12,13 @@ GameObject:
   - component: {fileID: 3302014}
   - component: {fileID: 2394998}
   - component: {fileID: 64911900770843802}
-  - component: {fileID: 4021028013117055738}
-  - component: {fileID: 7076640756087159699}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: SD_Prop_Skull_Pile_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &410444
 Transform:
   m_ObjectHideFlags: 0
@@ -111,82 +109,3 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43936574117616954, guid: b1263362305565542bea3546c1c2e898, type: 2}
---- !u!114 &4021028013117055738
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _label: Stos czaszek
-  _onInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7076640756087159699}
-        m_TargetAssemblyTypeName: AE.Message, AE
-        m_MethodName: ShowDefaultMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4021028013117055738}
-        m_TargetAssemblyTypeName: AE.Item, AE
-        m_MethodName: DestroyItem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onShowLabel:
-    m_PersistentCalls:
-      m_Calls: []
-  _onHideLabel:
-    m_PersistentCalls:
-      m_Calls: []
-  _onFailedInteract:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7076640756087159699}
-        m_TargetAssemblyTypeName: AE.Message, AE
-        m_MethodName: ShowAlternateMessage
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _requiredItem: 0
-  _addItem: 2
---- !u!114 &7076640756087159699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 180826}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a445aca0065495e44b43cc1c8ea42510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
-  _defaultMessage: Podnosisz wszystkie czaszki.
-  _alternateMessage: "Nie d\u017Awign\u0119 ju\u017C nic wi\u0119cej."
