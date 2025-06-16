@@ -7,14 +7,13 @@ namespace AE
     {
         //[SerializeField] private StringGameEvent _labelEvent;
         //[SerializeField] private StringGameEvent _messageEvent;
-        [Header("Interaction")]
         [field: SerializeField] public Item Inventory { get; private set; }
+        [SerializeField] private InputReader _inputReader;
         [SerializeField] private float _interactDistance = 3;
         [SerializeField] private LayerMask _interactLayerMask;
 
         public Vector2 MoveInput { get; private set; }
 
-        private PlayerControls _inputActions;
         private Transform _cameraTransform;
         private IInteractable _currentInteractable;
 
@@ -23,26 +22,25 @@ namespace AE
         #region InputActions
         private void OnEnable()
         {
-            _inputActions.Enable();
-            _inputActions.Gameplay.Move.performed += OnMove;
-            _inputActions.Gameplay.Move.canceled += OnMove;
-            _inputActions.Gameplay.Interact.performed += OnInteract;
+            _inputReader.MoveAction.performed += OnMove;
+            _inputReader.MoveAction.canceled += OnMove;
+            _inputReader.InteractAction.performed += OnInteract;
         }
 
         private void OnDisable()
         {
-            _inputActions.Gameplay.Move.performed -= OnMove;
-            _inputActions.Gameplay.Move.canceled -= OnMove;
-            _inputActions.Gameplay.Interact.performed -= OnInteract;
-            _inputActions.Disable();
+            _inputReader.MoveAction.performed -= OnMove;
+            _inputReader.MoveAction.canceled -= OnMove;
+            _inputReader.InteractAction.performed -= OnInteract;
         }
         #endregion
 
+        /*
         protected override void Awake()
         {
             base.Awake();
-            _inputActions = new PlayerControls();
         }
+        */
 
         protected override void Start()
         {

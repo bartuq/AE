@@ -1,0 +1,7 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/Pause/UIPauseStyle.uss?fileID=7433441132597879392&amp;guid=cdb747ca7fa856d4499944e31d823a10&amp;type=3#UIPauseStyle" />
+    <engine:VisualElement style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgba(0, 0, 0, 0.69);">
+        <engine:Button text="Resume" name="resume-button" class="button" />
+        <engine:Button text="Quit" name="quit-button" class="button" />
+    </engine:VisualElement>
+</engine:UXML>

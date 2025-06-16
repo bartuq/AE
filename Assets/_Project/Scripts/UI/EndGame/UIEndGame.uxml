@@ -1,0 +1,9 @@
+<engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/UIStyle.uss?fileID=7433441132597879392&amp;guid=cdb747ca7fa856d4499944e31d823a10&amp;type=3#UIStyle" />
+    <engine:VisualElement style="flex-grow: 1;">
+        <engine:VisualElement name="background" style="flex-grow: 1; align-items: center; justify-content: center; background-color: rgb(43, 43, 43);">
+            <engine:Label text="Gratulacje - zagadka rozwiązana!" style="font-size: 80px; color: rgb(212, 212, 212); margin-bottom: 60px;" />
+            <engine:Button text="Zakończ" name="quit-button" class="button" />
+        </engine:VisualElement>
+    </engine:VisualElement>
+</engine:UXML>

@@ -1,0 +1,25 @@
+.button {
+    width: 260px;
+    height: 60px;
+    font-size: 40px;
+    margin-top: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.button:hover {
+    scale: 1.05 1.05;
+}
+
+.transition-background {
+    opacity: 0;
+    transition-timing-function: ease-in-out;
+    transition-property: opacity;
+    transition-duration: 2s;
+}
+
+.transition-background.visible {
+    opacity: 1;
+}

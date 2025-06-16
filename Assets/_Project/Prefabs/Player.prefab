@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 5
+  _inputReader: {fileID: 11400000, guid: d6a0e9b7a529c2f4da790422f65a7f35, type: 2}
   <Inventory>k__BackingField: 0
   _interactDistance: 3
   _interactLayerMask:
