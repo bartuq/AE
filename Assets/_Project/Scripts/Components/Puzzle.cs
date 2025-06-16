@@ -6,7 +6,7 @@ using UnityEngine.Events;
 namespace AE
 {
     [Flags]
-    public enum UsableItem
+    public enum Item
     {
         None = 0,
         Sword = 1 << 0,
@@ -16,7 +16,7 @@ namespace AE
     [Serializable]
     public class PuzzleStage
     {
-        public UsableItem requiredItem = UsableItem.None;
+        public Item requiredItem = Item.None;
         public bool removeItem = false;
         [TextArea] public string successMessage;
         [TextArea] public string failedMessage;
@@ -51,14 +51,14 @@ namespace AE
 
         public bool IsComplete => _currentStage >= _stages.Count;
 
-        private bool HasItemRequired(PuzzleStage stage, UsableItem item)
+        private bool HasItemRequired(PuzzleStage stage, Item item)
         {
-            return stage.requiredItem == UsableItem.None || item.HasFlag(stage.requiredItem);
+            return stage.requiredItem == Item.None || item.HasFlag(stage.requiredItem);
         }
 
         private bool HasItemToRemove(PuzzleStage stage)
         {
-            return stage.removeItem && stage.requiredItem != UsableItem.None;
+            return stage.removeItem && stage.requiredItem != Item.None;
         }
 
         private void ExecuteStage(PuzzleStage stage, Action callback)

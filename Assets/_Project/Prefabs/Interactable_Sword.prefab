@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 996630783254858668}
   - component: {fileID: 1976550525719543185}
   m_Layer: 6
-  m_Name: Item_Sword
+  m_Name: Interactable_Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,8 +142,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 996630783254858668}
-        m_TargetAssemblyTypeName: AE.Item, AE
-        m_MethodName: DestroyItem
+        m_TargetAssemblyTypeName: AE.BaseInteractable, AE
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

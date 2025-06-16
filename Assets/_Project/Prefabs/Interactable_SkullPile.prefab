@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2362428795052579139
+--- !u!1 &5427632963160303210
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,27 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2928917473599440698}
-  - component: {fileID: 9130510858535157908}
-  - component: {fileID: 1162854598490890929}
-  - component: {fileID: 7654058234546946522}
-  - component: {fileID: 6533300577616833676}
-  - component: {fileID: 344542372255601636}
-  - component: {fileID: 4749117068341036210}
+  - component: {fileID: 168333727537281289}
+  - component: {fileID: 8937331771361006520}
+  - component: {fileID: 7888074512000857774}
+  - component: {fileID: 1433679178899056265}
+  - component: {fileID: 2989484350505628010}
+  - component: {fileID: 4448390777962913864}
   m_Layer: 6
-  m_Name: Item_Sconce
+  m_Name: Interactable_SkullPile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2928917473599440698
+--- !u!4 &168333727537281289
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
+  m_GameObject: {fileID: 5427632963160303210}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -37,23 +36,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &9130510858535157908
+--- !u!33 &8937331771361006520
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
-  m_Mesh: {fileID: 4300000, guid: b483862ada35eb54d975ca2197af6f8d, type: 3}
---- !u!23 &1162854598490890929
+  m_GameObject: {fileID: 5427632963160303210}
+  m_Mesh: {fileID: 4300000, guid: 99f95d98dfb97a548beb16f4d52ade81, type: 3}
+--- !u!23 &7888074512000857774
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
+  m_GameObject: {fileID: 5427632963160303210}
   m_Enabled: 1
-  m_CastShadows: 2
+  m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
   m_StaticShadowCaster: 0
@@ -90,35 +89,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &7654058234546946522
-Animator:
-  serializedVersion: 7
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: b483862ada35eb54d975ca2197af6f8d, type: 3}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_AnimatePhysics: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!64 &6533300577616833676
+--- !u!64 &1433679178899056265
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
+  m_GameObject: {fileID: 5427632963160303210}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -133,27 +110,39 @@ MeshCollider:
   serializedVersion: 5
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 43231654565932644, guid: 7a5f03eea2f9e8b479dbec079264355e, type: 2}
---- !u!114 &344542372255601636
+  m_Mesh: {fileID: 43936574117616954, guid: b1263362305565542bea3546c1c2e898, type: 2}
+--- !u!114 &2989484350505628010
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
+  m_GameObject: {fileID: 5427632963160303210}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _label: "Zapal \u015Bwieczki"
+  _label: Stos czaszek
   _onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4749117068341036210}
+      - m_Target: {fileID: 4448390777962913864}
         m_TargetAssemblyTypeName: AE.Message, AE
         m_MethodName: ShowDefaultMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2989484350505628010}
+        m_TargetAssemblyTypeName: AE.BaseInteractable, AE
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -171,22 +160,33 @@ MonoBehaviour:
       m_Calls: []
   _onFailedInteract:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4448390777962913864}
+        m_TargetAssemblyTypeName: AE.Message, AE
+        m_MethodName: ShowAlternateMessage
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _requiredItem: 0
-  _addItem: 0
---- !u!114 &4749117068341036210
+  _addItem: 2
+--- !u!114 &4448390777962913864
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2362428795052579139}
+  m_GameObject: {fileID: 5427632963160303210}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a445aca0065495e44b43cc1c8ea42510, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
-  _defaultMessage: "Blask \u015Bwiec o\u015Bwietla pomieszczenie. Dostrzegasz co\u015B
-    na g\xF3rze."
-  _alternateMessage: 
+  _defaultMessage: Podnosisz wszystkie czaszki.
+  _alternateMessage: "Nie d\u017Awign\u0119 ju\u017C nic wi\u0119cej."

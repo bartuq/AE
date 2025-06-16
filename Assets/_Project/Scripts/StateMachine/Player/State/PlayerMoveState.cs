@@ -12,13 +12,13 @@ namespace AE
         public override void Enter()
         {
             base.Enter();
-            Debug.Log($"[{_stateMachine.Player.name}] Entering Move State");
+            //Debug.Log($"[{_stateMachine.Player.name}] Entering Move State");
         }
 
         public override void Exit()
         {
             base.Exit();
-            Debug.Log($"[{_stateMachine.Player.name}] Exiting Move State");
+            //Debug.Log($"[{_stateMachine.Player.name}] Exiting Move State");
         }
 
         public override void Update()

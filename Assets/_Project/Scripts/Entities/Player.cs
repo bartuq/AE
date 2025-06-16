@@ -8,7 +8,7 @@ namespace AE
         //[SerializeField] private StringGameEvent _labelEvent;
         //[SerializeField] private StringGameEvent _messageEvent;
         [Header("Interaction")]
-        [field: SerializeField] public UsableItem Inventory { get; private set; }
+        [field: SerializeField] public Item Inventory { get; private set; }
         [SerializeField] private float _interactDistance = 3;
         [SerializeField] private LayerMask _interactLayerMask;
 
@@ -74,7 +74,7 @@ namespace AE
                 if (hit.collider.TryGetComponent(out IInteractable interactable))
                 {
                     if (_currentInteractable == interactable) return;
-                    Debug.Log("Interaction");
+                    //Debug.Log("Interaction");
                     _currentInteractable = interactable;
                     _currentInteractable.ShowLabel();
                     return;
@@ -98,11 +98,11 @@ namespace AE
         }
 
         #region Inventory
-        public bool HasRequiredItem(UsableItem item) => (Inventory & item) == item;
+        public bool HasRequiredItem(Item item) => (Inventory & item) == item;
 
-        public void AddItem(UsableItem item) => Inventory |= item;
+        public void AddItem(Item item) => Inventory |= item;
 
-        public void RemoveItem(UsableItem item) => Inventory &= ~item;
+        public void RemoveItem(Item item) => Inventory &= ~item;
         #endregion
 
         /*

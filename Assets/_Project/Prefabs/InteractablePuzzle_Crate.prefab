@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5374340791685710740}
   - component: {fileID: 6146283360550607738}
   m_Layer: 6
-  m_Name: Item_ClosedCrate
+  m_Name: Interactable_ClosedCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,8 +145,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _label: "Zamkni\u0119ta skrzynia"
   _onInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -156,6 +154,8 @@ MonoBehaviour:
   _onHideLabel:
     m_PersistentCalls:
       m_Calls: []
+  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
+  _label: "Zamkni\u0119ta skrzynia"
   _onFailedInteract:
     m_PersistentCalls:
       m_Calls: []
@@ -171,7 +171,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1620052330681555136}
   m_Layer: 0
-  m_Name: ItemPuzzle_Crate
+  m_Name: InteractablePuzzle_Crate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -210,7 +210,7 @@ GameObject:
   - component: {fileID: 825065585761340760}
   - component: {fileID: 2133118231670519485}
   m_Layer: 6
-  m_Name: ItemPuzzle_01
+  m_Name: InteractablePuzzle_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,8 +341,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e251b89e5b2a6439be96d88be06355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _label: Lina
   _onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -359,8 +357,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 8248417771076544637}
-        m_TargetAssemblyTypeName: AE.BaseItem, AE
-        m_MethodName: DestroyItem
+        m_TargetAssemblyTypeName: AE.BaseInteractable, AE
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -376,6 +374,8 @@ MonoBehaviour:
   _onHideLabel:
     m_PersistentCalls:
       m_Calls: []
+  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
+  _label: Lina
   _Id: 1
   _puzzleEvent: {fileID: 11400000, guid: a8a220a17b813c04cbe5bfbaa81e45e0, type: 2}
 --- !u!114 &2133118231670519485
@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 8580547905280596951}
   - component: {fileID: 8248417771076544637}
   m_Layer: 6
-  m_Name: ItemPuzzle_00
+  m_Name: InteractablePuzzle_00
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -538,8 +538,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e251b89e5b2a6439be96d88be06355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _label: Pusta skrzynia
   _onInteract:
     m_PersistentCalls:
       m_Calls:
@@ -561,6 +559,8 @@ MonoBehaviour:
   _onHideLabel:
     m_PersistentCalls:
       m_Calls: []
+  _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
+  _label: Pusta skrzynia
   _Id: 0
   _puzzleEvent: {fileID: 11400000, guid: a8a220a17b813c04cbe5bfbaa81e45e0, type: 2}
 --- !u!1001 &2945972325714327272

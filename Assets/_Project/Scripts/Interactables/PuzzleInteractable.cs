@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace AE
 {
-    public class PuzzleItem : BaseItem
+    public class PuzzleInteractable : BaseInteractable
     {
         [SerializeField, Min(-1)] private int _Id = -1;
         [SerializeField] private PuzzleGameEvent _puzzleEvent;

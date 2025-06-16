@@ -3,19 +3,11 @@ using UnityEngine.Events;
 
 namespace AE
 {
-    public class Item : BaseItem
+    public class Interactable : BaseInteractable
     {
         [SerializeField] private UnityEvent _onFailedInteract;
-        [SerializeField] private UsableItem _requiredItem = UsableItem.None;
-        [SerializeField] private UsableItem _addItem = UsableItem.None;
-
-        /*
-        private void Start()
-        {
-            // test
-            transform.DOLocalRotate(new Vector3(0, 0, 360), 1f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart);
-        }
-        */
+        [SerializeField] private Item _requiredItem = Item.None;
+        [SerializeField] private Item _addItem = Item.None;
 
         public override void Interact(Player player)
         {
@@ -38,6 +30,6 @@ namespace AE
             base.Interact(player);
         }
 
-        public bool IsPickable() => _addItem != UsableItem.None;
+        public bool IsPickable() => _addItem != Item.None;
     }
 }

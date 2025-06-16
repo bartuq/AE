@@ -3,15 +3,14 @@ using UnityEngine.Events;
 
 namespace AE
 {
-    public abstract class BaseItem : MonoBehaviour , IInteractable
+    public abstract class BaseInteractable : MonoBehaviour , IInteractable
     {
-        [SerializeField] private StringGameEvent _labelEvent;
-        [SerializeField] private string _label;
-
-        [Header("Events")]
         [SerializeField] protected UnityEvent _onInteract;
         [SerializeField] protected UnityEvent _onShowLabel;
         [SerializeField] protected UnityEvent _onHideLabel;
+
+        [SerializeField] private StringGameEvent _labelEvent;
+        [SerializeField] private string _label;
 
         public string Label => _label;
 
@@ -32,7 +31,7 @@ namespace AE
             _labelEvent.TriggerEvent("", _onHideLabel.Invoke);
         }
 
-        public void DestroyItem() => Destroy(gameObject);
+        public void DestroyObject() => Destroy(gameObject);
 
         public void MoveVertical(float value) => transform.position += Vector3.up * value;
     }
