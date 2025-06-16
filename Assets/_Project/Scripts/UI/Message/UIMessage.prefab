@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 8987695051426587706}
   - component: {fileID: 2001452122129983641}
   - component: {fileID: 9203648738454386362}
-  - component: {fileID: 1338056047462407717}
   m_Layer: 5
   m_Name: UIMessage
   m_TagString: Untagged
@@ -86,34 +85,6 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: AE.UIMessage, AE
         m_MethodName: ShowMessage
         m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1338056047462407717
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8570899184459137082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50cdf1971fc6e2d4398648d369c18d2f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameEvent: {fileID: 11400000, guid: 586db70f82c0b984380f7b6cc7e727b4, type: 2}
-  response:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2001452122129983641}
-        m_TargetAssemblyTypeName: AE.UIMessage, AE
-        m_MethodName: Test
-        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

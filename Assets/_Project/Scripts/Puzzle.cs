@@ -19,8 +19,10 @@ namespace AE
     {
         public UsableItem requiredItem = UsableItem.None;
         public bool removeItem = false;
-        [TextArea] public string message;
+        [TextArea] public string successMessage;
+        [TextArea] public string failedMessage;
         public UnityEvent onComplete;
+        public UnityEvent onFailed;
     }
 
     public class Puzzle : MonoBehaviour
@@ -35,7 +37,12 @@ namespace AE
             if ((id != _Id) || IsComplete) return;
 
             PuzzleStage stage = _stages[_currentStage];
-            if (!HasItemRequired(stage, player.Inventory)) return;
+            if (!HasItemRequired(stage, player.Inventory))
+            {
+                ShowMessage(stage.failedMessage);
+                stage.onFailed?.Invoke();
+                return;
+            }
             if (HasItemToRemove(stage))
             {
                 player.RemoveItem(stage.requiredItem);
@@ -57,7 +64,7 @@ namespace AE
 
         private void ExecuteStage(PuzzleStage stage, Action callback)
         {
-            ShowMessage(stage.message);
+            ShowMessage(stage.successMessage);
             stage.onComplete?.Invoke();
             callback?.Invoke();
             _currentStage++;

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2313322}
   - component: {fileID: 64646662214266494}
   - component: {fileID: 5887748635356311613}
+  - component: {fileID: 6424481325636602746}
   m_Layer: 6
   m_Name: SD_Prop_Corpse_03
   m_TagString: Untagged
@@ -122,19 +123,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Id: -1
-  _puzzleEvent: {fileID: 0}
-  _requiredItem: 0
   _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
-  _text: "Przygl\u0105dnij si\u0119"
+  _label: "Przygl\u0105dnij si\u0119"
   _onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5887748635356311613}
-        m_TargetAssemblyTypeName: AE.Item, AE
-        m_MethodName: ShowMessage
-        m_Mode: 5
+      - m_Target: {fileID: 6424481325636602746}
+        m_TargetAssemblyTypeName: AE.Message, AE
+        m_MethodName: ShowDefaultMessage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -150,3 +147,23 @@ MonoBehaviour:
   _onHideLabel:
     m_PersistentCalls:
       m_Calls: []
+  _onFailedInteract:
+    m_PersistentCalls:
+      m_Calls: []
+  _requiredItem: 0
+  _addItem: 0
+--- !u!114 &6424481325636602746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 113766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a445aca0065495e44b43cc1c8ea42510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
+  _defaultMessage: "Spod he\u0142mu s\u0142ycha\u0107 szept: - Sp\xF3jrz oczami umrzyka..."
+  _alternateMessage: 

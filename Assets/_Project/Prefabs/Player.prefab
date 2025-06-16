@@ -102,12 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Speed>k__BackingField: 5
-  <Inventory>k__BackingField: 2
+  <Inventory>k__BackingField: 0
   _interactDistance: 3
   _interactLayerMask:
     serializedVersion: 2
     m_Bits: 64
-  _carryObject: {fileID: 103404, guid: 25dd66e9b7eee8a4ea04a6f1f4f65265, type: 3}
 --- !u!143 &4316638438138245977
 CharacterController:
   m_ObjectHideFlags: 0

@@ -3499,14 +3499,22 @@ MonoBehaviour:
   _stages:
   - requiredItem: 2
     removeItem: 1
-    message: ...
+    successMessage: "Platforma lekko obni\u017Cy\u0142a si\u0119 w d\xF3\u0142"
+    failedMessage: To za wysoko.
     onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    onFailed:
       m_PersistentCalls:
         m_Calls: []
   - requiredItem: 2
     removeItem: 1
-    message: ...2!
+    successMessage: "Ju\u017C prawie si\u0119gam lin."
+    failedMessage: "Wci\u0105\u017C za wysoko."
     onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    onFailed:
       m_PersistentCalls:
         m_Calls: []
 --- !u!4 &335034492

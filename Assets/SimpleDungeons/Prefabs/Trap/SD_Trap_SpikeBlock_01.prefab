@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2377904}
   - component: {fileID: 9537714}
   - component: {fileID: 64799128490822770}
-  - component: {fileID: 2923465070536698260}
+  - component: {fileID: 3003324901867097522}
   m_Layer: 6
   m_Name: SD_Trap_SpikeBlock_01
   m_TagString: Untagged
@@ -133,7 +133,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 43863968765618532, guid: 256b6cf7de2dbce409f5a2ba7b0ebef7, type: 2}
---- !u!114 &2923465070536698260
+--- !u!114 &3003324901867097522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,20 +142,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 132426}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604ddd4b36542f944b8281eb65c6e6d1, type: 3}
+  m_Script: {fileID: 11500000, guid: b3e251b89e5b2a6439be96d88be06355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Id: 0
-  _puzzleEvent: {fileID: 11400000, guid: a8a220a17b813c04cbe5bfbaa81e45e0, type: 2}
-  _requiredItem: 1
   _labelEvent: {fileID: 11400000, guid: 2ad7336b6da3dcd4fac1659c3cdcf721, type: 2}
-  _messageEvent: {fileID: 11400000, guid: fb831eb9948a13244a568a929d4c4054, type: 2}
-  _text: "Rzu\u0107 czaszk\u0105"
+  _label: Interakcja
   _onInteract:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2923465070536698260}
-        m_TargetAssemblyTypeName: AE.Item, AE
+      - m_Target: {fileID: 3003324901867097522}
+        m_TargetAssemblyTypeName: AE.BaseItem, AE
         m_MethodName: MoveVertical
         m_Mode: 3
         m_Arguments:
@@ -166,9 +162,14 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _onFailedInteract:
+    m_PersistentCalls:
+      m_Calls: []
   _onShowLabel:
     m_PersistentCalls:
       m_Calls: []
   _onHideLabel:
     m_PersistentCalls:
       m_Calls: []
+  _Id: 0
+  _puzzleEvent: {fileID: 11400000, guid: a8a220a17b813c04cbe5bfbaa81e45e0, type: 2}

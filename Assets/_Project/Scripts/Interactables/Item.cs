@@ -3,22 +3,11 @@ using UnityEngine.Events;
 
 namespace AE
 {
-    public class Item : MonoBehaviour, IInteractable
+    public class Item : BaseItem
     {
-        [SerializeField, Min(-1)] private int _Id = -1;
-        [SerializeField] private PuzzleGameEvent _puzzleEvent;
-
-        [SerializeField] private UsableItem _requiredItem;
-        [SerializeField] private StringGameEvent _labelEvent;
-        [SerializeField] private StringGameEvent _messageEvent;
-        [SerializeField] private string _text;
-
-        [Header("Events")]
-        [SerializeField] private UnityEvent _onInteract;
-        [SerializeField] private UnityEvent _onShowLabel;
-        [SerializeField] private UnityEvent _onHideLabel;
-
-        public string Label => _text;
+        [SerializeField] private UnityEvent _onFailedInteract;
+        [SerializeField] private UsableItem _requiredItem = UsableItem.None;
+        [SerializeField] private UsableItem _addItem = UsableItem.None;
 
         /*
         private void Start()
@@ -28,39 +17,27 @@ namespace AE
         }
         */
 
-        public void Interact(Player player)
+        public override void Interact(Player player)
         {
-            if (IsPuzzle(player)) return;
-            _onInteract?.Invoke();
+            if (!player.HasRequiredItem(_requiredItem))
+            {
+                _onFailedInteract?.Invoke();
+                return;
+            }
+
+            if (IsPickable())
+            {
+                if (player.HasRequiredItem(_addItem))
+                {
+                    _onFailedInteract?.Invoke();
+                    return;
+                }
+                player.AddItem(_addItem);
+            }
+
+            base.Interact(player);
         }
 
-        public void ShowLabel()
-        {
-            if ((!_labelEvent) || string.IsNullOrEmpty(_text)) return;
-            _labelEvent.TriggerEvent(_text, _onShowLabel.Invoke);
-        }
-
-        public void HideLabel()
-        {
-            if (!_labelEvent) return;
-            _labelEvent.TriggerEvent("", _onHideLabel.Invoke);
-        }
-
-        public void ShowMessage(string message)
-        {
-            if ((!_messageEvent) || string.IsNullOrEmpty(message)) return;
-            _messageEvent.TriggerEvent(message);
-        }
-
-        public bool IsPuzzle(Player player)
-        {
-            if (!_puzzleEvent) return false;
-            _puzzleEvent.TriggerEvent(_Id, player, _onInteract.Invoke);
-            return true;
-        }
-
-        public void DestroyItem() => Destroy(gameObject);
-
-        public void MoveVertical(int value) => transform.position += Vector3.up * value;
+        public bool IsPickable() => _addItem != UsableItem.None;
     }
 }
