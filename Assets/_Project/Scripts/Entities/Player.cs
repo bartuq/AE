@@ -11,6 +11,7 @@ namespace AE
         [SerializeField] private InputReader _inputReader;
         [SerializeField] private float _interactDistance = 3;
         [SerializeField] private LayerMask _interactLayerMask;
+        [SerializeField] private AudioSource _audioSource;
 
         public Vector2 MoveInput { get; private set; }
 
@@ -84,6 +85,7 @@ namespace AE
             _currentInteractable = null;
         }
 
+        #region Input
         public void OnMove(InputAction.CallbackContext ctx)
         {
             MoveInput = ctx.ReadValue<Vector2>();
@@ -94,6 +96,7 @@ namespace AE
             if (_currentInteractable == null) return;
             _currentInteractable.Interact(this);
         }
+        #endregion
 
         #region Inventory
         public bool HasRequiredItem(Item item) => (Inventory & item) == item;
@@ -101,6 +104,20 @@ namespace AE
         public void AddItem(Item item) => Inventory |= item;
 
         public void RemoveItem(Item item) => Inventory &= ~item;
+        #endregion
+
+        #region AudioSource
+        public void PlayFootstepsSfx()
+        {
+            if (!_audioSource || !_audioSource.clip) return;
+            _audioSource.Play();
+        }
+
+        public void StopFootstepsSfx()
+        {
+            if (!_audioSource) return;
+            _audioSource.Stop();
+        }
         #endregion
 
         /*

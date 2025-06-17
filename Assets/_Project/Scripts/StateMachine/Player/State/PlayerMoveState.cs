@@ -13,12 +13,14 @@ namespace AE
         {
             base.Enter();
             //Debug.Log($"[{_stateMachine.Player.name}] Entering Move State");
+            _stateMachine.Player.PlayFootstepsSfx();
         }
 
         public override void Exit()
         {
             base.Exit();
             //Debug.Log($"[{_stateMachine.Player.name}] Exiting Move State");
+            _stateMachine.Player.StopFootstepsSfx();
         }
 
         public override void Update()
