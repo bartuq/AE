@@ -1,4 +1,5 @@
 <engine:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:engine="UnityEngine.UIElements" xmlns:editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/_Project/Scripts/UI/UIStyle.uss?fileID=7433441132597879392&amp;guid=cdb747ca7fa856d4499944e31d823a10&amp;type=3#UIStyle" />
     <engine:VisualElement name="VisualElement" style="flex-grow: 1; justify-content: flex-end; align-items: center;">
         <engine:Label name="message-label" text="Text" style="margin-bottom: 50px; white-space: normal; padding-right: 100px; padding-left: 100px; -unity-text-align: middle-left; font-size: 40px; color: rgb(224, 224, 224); -unity-text-outline-width: 2px; -unity-text-outline-color: rgb(0, 0, 0); -unity-font-style: bold;" />
     </engine:VisualElement>

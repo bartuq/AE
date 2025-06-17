@@ -23,3 +23,14 @@
 .transition-background.visible {
     opacity: 1;
 }
+
+.transition-message {
+    opacity: 1;
+    transition-timing-function: ease-in-out;
+    transition-property: opacity;
+    transition-duration: 1s;
+}
+
+.fade-out {
+    opacity: 0;
+}
